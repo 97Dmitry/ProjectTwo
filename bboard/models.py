@@ -17,9 +17,12 @@ class Bb(models.Model):
 
 
 class Rubric(models.Model):
-    name = models.CharField(max_length=25, db_index=True, verbose_name='Тег')
+    name = models.CharField(max_length=30, db_index=True, verbose_name='Тег')
 
     class Meta:
         verbose_name_plural = 'Теги'
         verbose_name = 'Тег'
         ordering = ['name']
+
+    def __str__(self):      # Указывает на то, что все теги
+        return self.name    # будут называется своим именем
