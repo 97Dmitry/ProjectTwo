@@ -1,0 +1,11 @@
+# created by virtualenv automatically
+/venv/
+/static/
+*.pyc
+*~
+__pycache__
+db.sqlite3
+.DS_Store
+.idea
+requirement.txt
+prod_settings.py
