@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Главная - Доска объявлений</title>
+    <title>{{ current_rubric.name }} - Доска объявлений</title>
 </head>
 <body>
     <h1>Объявления</h1>
+    <h2>Тег: {{ current_rubric.name }}</h2>
     <div>
         <a href="{% url 'index' %}">Главная</a>
         <p></p>
@@ -16,11 +17,11 @@
         {% endfor %}
     </div>
     {% for bb in bbs %}
-        <div>
-            <h2>{{ bb.title }}</h2>
-            <p>{{ bb.content }}</p>
-            <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
-        </div>
+    <div>
+        <h2>{{ bb.title }}</h2>
+        <p>{{ bb.content }}</p>
+        <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
+    </div>
     {% endfor %}
 </body>
 </html>
